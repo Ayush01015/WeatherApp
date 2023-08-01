@@ -1,4 +1,3 @@
-import { Log } from "victory";
 import "./Card.css";
 import ShimmerCard from "../Shimmer/ShimmerCard";
 import Clock from "../Clock/Clock";
@@ -8,8 +7,10 @@ const Card = ({ location, current }) => {
   if (!location || !current) {
       return <ShimmerCard/>;
   }
-  const {name,region,country,lat,lon,tz_id,localtime_epoch,localtime} = location;
-  const {temp_c,temp_f,condition,wind_kph,wind_degree,humidity,cloud,feelslike_c,feelslike_f,vis_km} = current;
+  //name,region,country,lat,lon,tz_id,localtime_epoch,localtime
+  //temp_c,temp_f,condition,wind_kph,wind_degree,humidity,cloud,feelslike_c,feelslike_f,vis_km
+  const {name,region,country} = location;
+  const {temp_c,condition,wind_kph,wind_degree,humidity,feelslike_c} = current;
   return (
     <div className="component">
       <div className="card">
