@@ -1,6 +1,8 @@
 import { Log } from "victory";
 import "./Card.css";
 import ShimmerCard from "../Shimmer/ShimmerCard";
+import Clock from "../Clock/Clock";
+
 
 const Card = ({ location, current }) => {
   if (!location || !current) {
@@ -14,7 +16,7 @@ const Card = ({ location, current }) => {
         <div className="card-header-container">
           <div className="card-header">
             <p>Current Weather</p>
-            <p>9:15pm</p>
+            <p><Clock/></p>
           </div>
           <hr className="hr" />
         </div>

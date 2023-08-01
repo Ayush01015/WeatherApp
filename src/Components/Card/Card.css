@@ -4,10 +4,12 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    /* background-color: black;
-    color: white; */
-
 }
+/* 
+==========
+card styles
+==========
+*/
 .card{
    width: 80%;
    height: 100%;
@@ -36,7 +38,6 @@
 }
 
 .weather-details{
-    /* border: 1px solid red; */
     padding: 1rem 0.8rem;
     display: flex;
     flex-direction: column;
@@ -61,7 +62,11 @@
 .hr-2{
     margin: 0.5rem 0;
 }
-
+/* 
+==========
+Responsive code
+==========
+*/
 @media(min-width:600px){
     .sec-2{
         display: flex;
@@ -70,7 +75,6 @@
     .detail-box{
         min-width: 185px;
         font-size: 0.8rem;
-        /* max-width: 1000px; */
     }
 }
 

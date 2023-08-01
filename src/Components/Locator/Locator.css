@@ -5,12 +5,18 @@
   justify-content: center;
   align-items: center;
   background-color: #C4B0FF;
-  /* border: 1px solid red; */
 }
 .location-selector {
     width: 100%;
 
 }
+
+/* 
+==========
+Responsive code
+==========
+*/
+
 @media (min-width: 225px) {
     .location-selector{
         max-width: 80%;
