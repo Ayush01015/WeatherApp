@@ -1,34 +1,37 @@
 import React, { useEffect, useState } from "react";
 import {url,options} from "../../Constants/Api.js"
 import Locator from "../Locator/Locator.js";
-// ent.json?q=53.1%2C-0.13';
+import Card from "../Card/Card.js";
+// ent.json?q=53.1%2C-0.13'; 
+import "./Body.css"
 const Body = () => {
-
+  const [data,setData] = useState([]);
   const [latitude,setLatitude] = useState(53.1);
   const [longitude,setLongitude] = useState(-0.13);
   
   async function getData(){
     const data = await fetch(`${url}q=${latitude}%2C${longitude}`,options);
     const json = await data.json(); //converting to json
-    console.log(json);
-    console.log(`${url}q=${latitude}%2C${longitude}`);
+    setData(json);
+    console.log("DATA::",json);
+    console.log("URL::",`${url}q=${latitude}%2C${longitude}`);
   }
 
   useEffect(()=>{
-    getData();
+    // getData();
   },[latitude,longitude])
 
   return (
-    <>
-      <h1>BODY</h1>
+    <div className="body">
+      <h1>Weather Forecast</h1>
       <Locator
           latitude={latitude}
           setLatitude={setLatitude}
           longitude={longitude}
           setLongitude={setLongitude}
-          // setLoc={setLoc}
         />
-    </>
+      <Card {...data}/>
+    </div>
   );
 };
 

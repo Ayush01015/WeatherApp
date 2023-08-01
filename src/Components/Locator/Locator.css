@@ -1,5 +1,12 @@
 
-
+.locator{
+  width: 425px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #C4B0FF;
+  /* padding: 1rem; */
+}
 .location-selector {
     width: 95%;
     margin-top: 1rem;

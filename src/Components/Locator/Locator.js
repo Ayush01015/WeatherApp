@@ -1,7 +1,10 @@
 import { useState, useEffect } from "react";
 import TextField from "@mui/material/TextField";
+import InputLabel from '@mui/material/InputLabel';
 import Autocomplete from "@mui/material/Autocomplete";
 import Paper from '@mui/material/Paper';
+import { makeStyles } from '@mui/styles';
+
 import "./Locator.css";
 // import Listbox from '@mui/material/Listbox';
 
@@ -13,7 +16,7 @@ const locations = [
     label: "Delhi",
     coordiantes: {
       latitude: "28.696701100186587",
-      longitude: "77.22774819099834",
+      longitude: "77.22774819099834", 
     },
   },
   {
@@ -73,6 +76,20 @@ const locations = [
     },
   },
 ];
+const useStyles = makeStyles({
+  locationSelector: {
+  },
+  outlinedInput: {
+    '& .MuiOutlinedInput-root': {
+      '& fieldset': {
+        color:'cyan'
+      },
+    },
+  },
+});
+
+// Inside your component...
+
 
 const Locator = ({ latitude, longitude, setLatitude, setLongitude, setLoc }) => {
   const [selectedLocation, setSelectedLocation] = useState(null);
@@ -87,22 +104,31 @@ const Locator = ({ latitude, longitude, setLatitude, setLongitude, setLoc }) => 
     }
   };
 
+  const classes = useStyles();
 //   console.log("-->",latitude,"-->",longitude);
   return (
-      <Autocomplete
-        className="location-selector"
-        options={locations}
-        getOptionLabel={(option) => option.label}
-        value={selectedLocation}
-        onChange={handleLocationChange}
-        // sx={{width:280, border:"none"}}
-        renderInput={(params) => (
-          <TextField {...params} label="Select Location" variant="outlined" />
-        )}
-        PaperComponent={({ children }) => (
-          <Paper style={{ width: 200, fontFamily:"Montserrat", color:"black", fontWeight:600 }}>{children}</Paper>
-        )}
+
+    <Autocomplete
+    className={classes.locationSelector+" location-selector"}
+    options={locations}
+    getOptionLabel={(option) => option.label}
+    value={selectedLocation}
+    onChange={handleLocationChange}
+    renderInput={(params) => (
+      <TextField
+        {...params}
+        label="Select Location"
+        variant="outlined"
+        className={classes.outlinedInput}
       />
+    )}
+    PaperComponent={({ children }) => (
+      <Paper style={{ width: 200, fontFamily: "Montserrat", color: "black", fontWeight: 600 }}>
+        {children}
+      </Paper>
+    )}
+  />
+
   );
 };
  

@@ -1,0 +1,12 @@
+
+.component{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.card{
+   width: 80%;
+   height: 100%;
+   border: 1px solid grey;
+}
