@@ -1,6 +1,5 @@
 # WeatherApp
 
-![WeatherApp Screenshot](https://github.com/Ayush01015/WeatherApp/blob/main/weather_app_screenshot.png)
 
 This is a weather app implemented in React.js that allows users to get weather information for different locations. The app uses the RapidAPI service to fetch weather data and provides a user-friendly and responsive interface with a shimmer UI effect to improve the user experience.
 
