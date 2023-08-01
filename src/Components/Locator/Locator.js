@@ -18,6 +18,13 @@ const locations = [
     },
   },
   {
+    label: "Rajasthan",
+    coordiantes: {
+      latitude: "24.2749830727458",
+      longitude: "76.232665488753", 
+    },
+  },
+  {
     label: "Delhi",
     coordiantes: {
       latitude: "28.696701100186587",
