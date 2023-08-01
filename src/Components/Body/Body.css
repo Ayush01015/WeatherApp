@@ -19,3 +19,7 @@ h1{
   height: 100vh;
   border: 1px solid red;
 }
+.heading{
+  font-size: 1.6rem;
+  font-weight: 800;
+}

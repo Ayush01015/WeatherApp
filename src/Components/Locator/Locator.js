@@ -13,6 +13,13 @@ import "./Locator.css";
 
 const locations = [
   {
+    label: "Firozabad (Default)",
+    coordiantes: {
+      latitude: "27.157340169427442",
+      longitude: "78.40287067267217", 
+    },
+  },
+  {
     label: "Delhi",
     coordiantes: {
       latitude: "28.696701100186587",
@@ -20,7 +27,7 @@ const locations = [
     },
   },
   {
-    label: "Mumbai ",
+    label: "Bombay ",
     coordiantes: {
       latitude: "19.053883935986374",
       longitude: "72.82328435649667",

@@ -6,8 +6,8 @@ import Card from "../Card/Card.js";
 import "./Body.css"
 const Body = () => {
   const [data,setData] = useState([]);
-  const [latitude,setLatitude] = useState(53.1);
-  const [longitude,setLongitude] = useState(-0.13);
+  const [latitude,setLatitude] = useState(27.157340169427442);
+  const [longitude,setLongitude] = useState(78.40287067267217);
   
   async function getData(){
     const data = await fetch(`${url}q=${latitude}%2C${longitude}`,options);
@@ -18,12 +18,12 @@ const Body = () => {
   }
 
   useEffect(()=>{
-    // getData();
+    getData();
   },[latitude,longitude])
 
   return (
     <div className="body">
-      <h1>Weather Forecast</h1>
+      <p className="heading">Weather Forecast</p>
       <Locator
           latitude={latitude}
           setLatitude={setLatitude}

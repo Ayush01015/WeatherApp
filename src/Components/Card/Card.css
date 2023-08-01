@@ -4,9 +4,77 @@
     justify-content: center;
     align-items: center;
     width: 100%;
+    /* background-color: black;
+    color: white; */
+
 }
 .card{
    width: 80%;
    height: 100%;
    border: 1px solid grey;
+}
+.card-header-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.card-header{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0.8rem;
+    padding-bottom: 0;
+    font-size: 0.9rem;
+}
+
+.hr{
+    border-color: #F1F6F9;
+    width: 95%;
+    margin: 0.5rem 0;
+}
+
+.weather-details{
+    /* border: 1px solid red; */
+    padding: 1rem 0.8rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: -1rem;
+}
+.weather-details > img{
+    width: 40%;
+}
+.cnt-name{
+    font-size: 2rem;
+}
+.detail-box{
+    display: flex;
+    font-size: 0.7rem;
+    justify-content: space-between;
+    padding-bottom: 0;
+}
+.sec-1{
+    margin-bottom: -1rem;
+}
+.hr-2{
+    margin: 0.5rem 0;
+}
+
+@media(min-width:600px){
+    .sec-2{
+        display: flex;
+        justify-content: space-between;
+    }
+    .detail-box{
+        min-width: 185px;
+        font-size: 0.8rem;
+        /* max-width: 1000px; */
+    }
+}
+@media(min-width:750px){
+    .component{
+        max-width: 600px;
+    }
 }
