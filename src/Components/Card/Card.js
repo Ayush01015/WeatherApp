@@ -1,9 +1,10 @@
 import { Log } from "victory";
 import "./Card.css";
+import ShimmerCard from "../Shimmer/ShimmerCard";
 
 const Card = ({ location, current }) => {
   if (!location || !current) {
-      return <div>Loading...</div>;
+      return <ShimmerCard/>;
   }
   const {name,region,country,lat,lon,tz_id,localtime_epoch,localtime} = location;
   const {temp_c,temp_f,condition,wind_kph,wind_degree,humidity,cloud,feelslike_c,feelslike_f,vis_km} = current;
@@ -36,7 +37,7 @@ const Card = ({ location, current }) => {
               <hr className="hr-2" />
               <div className="detail-box">
                 <p>Temperature</p>
-                <p>{temp_c}C</p>
+                <p>{temp_c}&#176;C</p>
               </div>
               <hr className="hr-2" />
               <div className="detail-box">
@@ -48,7 +49,7 @@ const Card = ({ location, current }) => {
             <div className="sub-sec-2">
               <div className="detail-box">
                 <p>Wind Degree</p>
-                <p>{wind_degree}degree</p>
+                <p>{wind_degree}&#176;</p>
               </div>
               <hr className="hr-2" />
               <div className="detail-box">
@@ -58,7 +59,7 @@ const Card = ({ location, current }) => {
               <hr className="hr-2" />
               <div className="detail-box">
                 <p>Feels Like</p>
-                <p>{feelslike_c}</p>
+                <p>{feelslike_c}&#176;</p>
               </div>
               <hr className="hr-2" />
             </div>
