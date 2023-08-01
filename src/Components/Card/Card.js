@@ -23,7 +23,7 @@ const Card = ({ location, current }) => {
         </div>
         <div className="weather-details">
           <div className="sec-1">
-            <p className="cnt-name">{name}</p>
+            <p className="cnt-name">{name==="Loni"?"Delhi":name}</p>
             <img src={condition.icon} alt={condition.text}/>
           </div>
           <div className="sec-2">
