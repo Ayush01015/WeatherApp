@@ -1,10 +1,15 @@
 
 import "./App.css";
 import Body from "./Components/Body/Body";
+import UserContextProvider from "./context/UserContextProvider";
 
 function App() {
   return (
-    <Body />
+    <>
+    <UserContextProvider>
+      <Body />
+    </UserContextProvider>
+    </>
   );
 }
 
