@@ -7,6 +7,7 @@ import Login from "../Login/Login.js";
 import Profile from "../Profile/Profile.js";
 import "./Body.css";
 import UserContext from "../../context/UserContext.js";
+import Img from "../../asset/img/Warning.png";
 
 const Body = () => {
   const [data, setData] = useState([]);
@@ -29,25 +30,37 @@ const Body = () => {
   if (!user) {
     return (
       <div>
+        {console.log("user", user)}
         <Login />
       </div>
     );
   }
   return (
     <>
-      <div className="body">
-        <p className="heading">Weather Forecast</p>
-        <WeatherSwitch />
-        <Locator
-          latitude={latitude}
-          setLatitude={setLatitude}
-          longitude={longitude}
-          setLongitude={setLongitude}
-        />
-        {/* passing props with spread operator */}
-        <Profile />
-        <Card {...data} />
-      </div>
+      {user.username === null ? (
+        <>
+          <div className="warning">
+            <img src={Img} alt="warn" />
+            <h1 className="heading-red">Plase Enter Login Credentials</h1>
+          </div>
+          <Login />
+        </>
+      ) : (
+        <div className="body">
+          {console.log("user2", user)}
+          <p className="heading">Weather Forecast</p>
+          <WeatherSwitch />
+          <Locator
+            latitude={latitude}
+            setLatitude={setLatitude}
+            longitude={longitude}
+            setLongitude={setLongitude}
+          />
+          {/* passing props with spread operator */}
+          <Profile />
+          <Card {...data} />
+        </div>
+      )}
     </>
   );
 };
