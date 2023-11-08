@@ -28,6 +28,7 @@ h1{
   padding: 0 1rem;
   align-items: center;
   justify-content: center;
+  margin-top: 2rem;
 }
 .warning > img{
   width: 20%;
