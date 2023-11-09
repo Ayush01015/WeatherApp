@@ -17,7 +17,7 @@ const Card = ({ location, current }) => {
         <div className="card-header-container">
           <div className="card-header">
             <p>Current Weather</p>
-            <p><Clock/></p>
+            <Clock/>
           </div>
           <hr className="hr" />
         </div>

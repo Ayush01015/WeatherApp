@@ -4,8 +4,9 @@ import { useContext } from "react";
 import UserContext from "../../context/UserContext"
 
 const Login = () => {
-  const [username, setUsername] = useState(null);
-  const [password, setPassword] = useState(null);
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  /*{Setting user of userContext}*/
   const {setUser} = useContext(UserContext);
   const handleLogin = (e) => {
     e.preventDefault();

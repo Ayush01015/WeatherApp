@@ -27,41 +27,30 @@ const Body = () => {
   }, [latitude, longitude]);
 
   const { user } = useContext(UserContext);
-  if (!user) {
+  if (!user || user.username === "" || user.password === "") {
     return (
       <div>
-        {console.log("user", user)}
+        <div className="warning">
+          <img src={Img} alt="warn" />
+          <h1 className="heading-red">Plase Enter Login Credentials</h1>
+        </div>
         <Login />
       </div>
     );
   }
   return (
-    <>
-      {user.username === null ? (
-        <>
-          <div className="warning">
-            <img src={Img} alt="warn" />
-            <h1 className="heading-red">Plase Enter Login Credentials</h1>
-          </div>
-          <Login />
-        </>
-      ) : (
-        <div className="body">
-          {console.log("user2", user)}
-          <p className="heading">Weather Forecast</p>
-          <WeatherSwitch />
-          <Locator
-            latitude={latitude}
-            setLatitude={setLatitude}
-            longitude={longitude}
-            setLongitude={setLongitude}
-          />
-          {/* passing props with spread operator */}
-          <Profile />
-          <Card {...data} />
-        </div>
-      )}
-    </>
+    <div className="body">
+      <p className="heading">Weather Forecast</p>
+      <WeatherSwitch />
+      <Locator
+        latitude={latitude}
+        setLatitude={setLatitude}
+        longitude={longitude}
+        setLongitude={setLongitude}
+      />
+      <Profile />
+      <Card {...data} />
+    </div>
   );
 };
 
